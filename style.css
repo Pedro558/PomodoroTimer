@@ -1,0 +1,130 @@
+:root{
+  font-size: 62.5%;
+  --bg-primary: #fff;
+  --base-color: 194;
+  --text-color: #000;
+  --ff-primary: 'Roboto', 'sans-serif';
+}
+
+*{
+  border: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body{
+  display: grid;
+  grid-template-areas: 
+  ". ."
+  "wrapper wrapper"
+  ". .";
+  color: var(--text-color);
+  background-color: var(--bg-primary);
+  font-family: var(--ff-primary);
+  min-height: 100vh;
+  
+}
+
+.wrapper{
+  grid-area: wrapper;
+  display: grid;
+  grid-template-areas:
+  "main card";
+  justify-items: center;
+  justify-content: space-evenly;
+}
+
+.card svg{
+  width: clamp(3.9rem, 5rem + 12vw, 13.8rem);
+  cursor: pointer;
+}
+
+main{
+  grid-area: main;
+  align-self: center;
+}
+
+#cards{
+  width: 30rem;
+  height: 33.3rem;
+  display: flex;
+  grid-area: card;
+  flex-wrap: wrap;
+  gap: 2rem;
+  align-self: center;
+  justify-content: center;
+}
+
+
+#timer{
+  font-size: clamp(4rem, 4rem + 10vw, 8.8rem);
+  display: flex;
+  justify-content: center;
+  font-weight: 700;
+  line-height: 10rem;
+  margin-bottom: 1.6rem;
+}
+
+button{
+  background: transparent;
+  cursor: pointer;
+}
+
+button svg{
+  width: clamp(3.2rem, 2rem + 12vw, 6.4rem);
+}
+
+.hide{
+  display: none;
+}
+
+
+#buttons{
+  display: flex;
+  height: clamp(8rem, 5rem + 10vw, 10.8rem);
+  margin: 0 auto;
+  gap: 3.2rem;
+  justify-content: center;
+  align-content: center;
+}
+
+/*footer{
+  grid-area: footer;
+  align-self: end;
+  justify-self: end;
+  padding: 0 4rem 3.2rem 0;
+}*/
+
+@media (max-width: 768px){
+  body{
+    grid-template-areas: 
+    "."
+    "wrapper"
+    ".";
+  }
+
+  .wrapper{
+    grid-area: wrapper;
+    display: grid;
+    grid-template-areas:
+        "main"
+        "card";
+    align-content: center;
+    justify-content: center;
+  }
+
+  #cards{
+    width: 100vw;
+    height: 30vh;
+    flex-wrap: nowrap;
+    align-self: center;
+    justify-content: center;
+  }
+
+  .card svg{
+    width: clamp(3.9rem, 4rem + 10vw, 9.8rem);
+  }
+
+}
+
+
