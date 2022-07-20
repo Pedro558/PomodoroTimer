@@ -7,7 +7,11 @@ import{
   cardForest,
   cardCoffee,
   cardRain,
-  cardFireplace
+  cardFireplace,
+  volumeCoffee,
+  volumeFireplace,
+  volumeForest,
+  volumeRain
 } from "./elements.js"
 
 export default function({controls, timer, sounds}){
@@ -39,7 +43,8 @@ export default function({controls, timer, sounds}){
     timer.updateDisplay()
     sounds.pressButton()
   })
-
+  
+ 
   cardForest.addEventListener('click', function(){
     sounds.pauseAudio()
     sounds.bgForest.play()
@@ -58,5 +63,9 @@ export default function({controls, timer, sounds}){
   cardFireplace.addEventListener('click', function(){
     sounds.pauseAudio()
     sounds.bgFireplace.play()
+  })
+
+  volumeForest.addEventListener('input', function(){
+    sounds.bgForest.volume = this.value
   })
 }

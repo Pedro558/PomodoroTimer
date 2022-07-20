@@ -5,10 +5,16 @@ const buttonPause = document.querySelector('.pause')
 const buttonStop = document.querySelector('.stop')
 const buttonPlus = document.querySelector('.plus')
 const buttonMinus = document.querySelector('.minus')
+
 const cardForest = document.querySelector('.forest')
 const cardRain = document.querySelector('.rain')
 const cardCoffee = document.querySelector('.coffee')
 const cardFireplace = document.querySelector('.fireplace')
+
+const volumeCoffee = document.getElementById('coffee')
+const volumeFireplace = document.getElementById('fireplace')
+const volumeForest = document.getElementById('nature')
+const volumeRain = document.getElementById('rain')
 
 export{
   minutesDisplay,
@@ -21,5 +27,9 @@ export{
   cardForest,
   cardRain,
   cardCoffee,
-  cardFireplace
+  cardFireplace,
+  volumeCoffee,
+  volumeFireplace,
+  volumeForest,
+  volumeRain
 }

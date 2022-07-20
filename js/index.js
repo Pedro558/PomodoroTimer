@@ -7,7 +7,8 @@ import{
   cardForest,
   cardCoffee,
   cardFireplace,
-  cardRain
+  cardRain,
+  volumeForest
 } from "./elements.js"
 
 import Events from "./events.js"
