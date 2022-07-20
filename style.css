@@ -155,10 +155,6 @@ button svg{
     justify-content: center;
   }
 
-  .card svg{
-    width: clamp(3.9rem, 3rem + 9vw, 9.8rem);
-  }
-
   input{
     margin-top: 110px;
   }
