@@ -14,11 +14,18 @@ export default function(){
 
   const bgFireplace = new Audio("https://github.com/Pedro558/bgAudios/blob/main/Lareira.wav?raw=true")
 
-  function pauseAudio(){
-    bgForest.pause()
-    bgCoffee.pause()
-    bgRain.pause()
-    bgFireplace.pause()
+  function pauseAudiosExcept(activeAudio){
+    const audios = [bgForest, bgCoffee, bgRain, bgFireplace]
+
+    audios.forEach((audio) => {
+      if (audio !== activeAudio) {
+        audio.pause()
+      }
+    })
+    // bgForest.pause()
+    // bgCoffee.pause()
+    // bgRain.pause()
+    // bgFireplace.pause()
   }
 
   function pressButton(){
@@ -32,7 +39,7 @@ export default function(){
   return{
     pressButton,
     timeEnd,
-    pauseAudio,
+    pauseAudiosExcept,
     bgForest,
     bgCoffee,
     bgRain,

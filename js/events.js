@@ -14,6 +14,7 @@ import{
   volumeRain
 } from "./elements.js"
 
+
 export default function({controls, timer, sounds}){
   buttonPlay.addEventListener('click', function(){
     controls.play()
@@ -44,25 +45,44 @@ export default function({controls, timer, sounds}){
     sounds.pressButton()
   })
   
- 
   cardForest.addEventListener('click', function(){
-    sounds.pauseAudio()
-    sounds.bgForest.play()
+      sounds.pauseAudiosExcept(sounds.bgForest)
+
+      if (sounds.bgForest.paused) {
+        sounds.bgForest.play()
+      } else {
+        sounds.bgForest.pause()
+      }
   })
 
   cardCoffee.addEventListener('click', function(){
-    sounds.pauseAudio()
-    sounds.bgCoffee.play()
+      sounds.pauseAudiosExcept(sounds.bgCoffee)
+
+      if (sounds.bgForest.paused) {
+        sounds.bgCoffee.play()
+      } else {
+        sounds.bgCoffee.pause()
+      }
   })
 
   cardRain.addEventListener('click', function(){
-    sounds.pauseAudio()
-    sounds.bgRain.play()
+      sounds.pauseAudiosExcept(sounds.bgRain)
+
+      if (sounds.bgRain.paused) {
+        sounds.bgRain.play()
+      } else {
+        sounds.bgRain.pause()
+      }
   })
 
   cardFireplace.addEventListener('click', function(){
-    sounds.pauseAudio()
-    sounds.bgFireplace.play()
+      sounds.pauseAudiosExcept(sounds.bgFireplace)
+
+      if (sounds.bgFireplace.paused) {
+        sounds.bgFireplace.play()
+      } else {
+        sounds.bgFireplace.pause()
+      }
   })
 
   volumeForest.addEventListener('input', function(){
