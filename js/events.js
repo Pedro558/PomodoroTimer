@@ -14,8 +14,6 @@ import{
   volumeRain
 } from "./elements.js"
 
-let soundActive = false
-
 export default function({controls, timer, sounds}){
   buttonPlay.addEventListener('click', function(){
     controls.play()
@@ -46,57 +44,44 @@ export default function({controls, timer, sounds}){
     sounds.pressButton()
   })
   
- 
   cardForest.addEventListener('click', function(){
-    sounds.pauseAudio()
-    if (!soundActive) {
-      sounds.bgForest.play()
-      return soundActive = true
-    } 
+      sounds.pauseAudiosExcept(sounds.bgForest)
 
-    if (soundActive) {
-      sounds.bgForest.pause()
-      return soundActive = false
-    }
+      if (sounds.bgForest.paused) {
+        sounds.bgForest.play()
+      } else {
+        sounds.bgForest.pause()
+      }
   })
 
   cardCoffee.addEventListener('click', function(){
-    sounds.pauseAudio()
-    if (!soundActive) {
-      sounds.bgCoffee.play()
-      return soundActive = true
-    } 
+      sounds.pauseAudiosExcept(sounds.bgCoffee)
 
-    if (soundActive) {
-      sounds.bgCoffee.pause()
-      return soundActive = false
-    }
+      if (sounds.bgForest.paused) {
+        sounds.bgCoffee.play()
+      } else {
+        sounds.bgCoffee.pause()
+      }
   })
 
   cardRain.addEventListener('click', function(){
-    sounds.pauseAudio()
-    if (!soundActive) {
-      sounds.bgRain.play()
-      return soundActive = true
-    } 
+      sounds.pauseAudiosExcept(sounds.bgRain)
 
-    if (soundActive) {
-      sounds.bgRain.pause()
-      return soundActive = false
-    }
+      if (sounds.bgRain.paused) {
+        sounds.bgRain.play()
+      } else {
+        sounds.bgRain.pause()
+      }
   })
 
   cardFireplace.addEventListener('click', function(){
-    sounds.pauseAudio()
-    if (!soundActive) {
-      sounds.bgFireplace.play()
-      return soundActive = true
-    } 
+      sounds.pauseAudiosExcept(sounds.bgFireplace)
 
-    if (soundActive) {
-      sounds.bgFireplace.pause()
-      return soundActive = false
-    }
+      if (sounds.bgFireplace.paused) {
+        sounds.bgFireplace.play()
+      } else {
+        sounds.bgFireplace.pause()
+      }
   })
 
   volumeForest.addEventListener('input', function(){
