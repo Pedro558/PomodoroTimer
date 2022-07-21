@@ -148,9 +148,8 @@ button svg{
   }
 
   #cards{
-    width: 100vw;
+    width: 60vw;
     height: 30vh;
-    flex-wrap: nowrap;
     align-self: center;
     justify-content: center;
   }
@@ -159,6 +158,23 @@ button svg{
     margin-top: 110px;
   }
 
+}
+
+@media(max-width: 568px){
+  button svg{
+    height: 100px;
+  }
+
+  input{
+    margin-top: 80px;
+  }
+
+  #cards {
+    width: 75vw;
+    height: 30vh;
+    align-self: center;
+    justify-content: center;
+}
 }
 
 
