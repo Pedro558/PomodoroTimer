@@ -61,7 +61,7 @@ export default function({controls, timer, sounds}){
   cardCoffee.addEventListener('click', function(){
       sounds.pauseAudiosExcept(sounds.bgCoffee)
 
-      if (sounds.bgForest.paused) {
+      if (sounds.bgCoffee.paused) {
         sounds.bgCoffee.play()
       } else {
         sounds.bgCoffee.pause()
