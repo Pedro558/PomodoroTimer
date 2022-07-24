@@ -1,9 +1,16 @@
 :root{
-  font-size: 62.5%;
-  --bg-primary: #fff;
-  --base-color: 194;
-  --text-color: #000;
+  font-size:62.5%;
+  --bg-white:#fff;
+  --bg-dark:#000;
+  --text-dark:#000;
+  --text-light:#fff;
+  --btn-color:#323238;
+  --card-color:#E1E1E6;
+  --card-color-hover:#02799D;
+  --card-symbol:#323238;
+  --card-symbol-hover:#fff;
   --ff-primary: 'Roboto', 'sans-serif';
+  /*#C4C4CC*/
 }
 
 *{
@@ -12,17 +19,37 @@
   box-sizing: border-box;
 }
 
+.btn-toggle{
+  width: 44px;
+  height: 44px;
+  position: absolute;
+  left: 80%;
+  right: 4.7%;
+  top: -25px;
+  bottom: 85%;
+  margin: 64px 64px 0 0;
+}
+
 body{
   display: grid;
   grid-template-areas: 
   ". ."
   "wrapper wrapper"
   ". .";
-  color: var(--text-color);
-  background-color: var(--bg-primary);
+  color: var(--text-dark);
+  background-color: var(--bg-white);
   font-family: var(--ff-primary);
   min-height: 100vh;
-  
+  position: relative;
+}
+
+.dark-mode{
+  background-color: var(--bg-dark);
+  color: var(--text-light);
+}
+
+#buttons svg path{
+  fill: var(--btn-color);
 }
 
 .wrapper{
@@ -58,7 +85,7 @@ input::-webkit-slider-runnable-track{
   height: 4px;
   cursor: pointer;
   border-radius: 999px;
-  /*background: var(--text-color);*/
+  /*background: var(--text-dark);*/
 }
 
 input::-webkit-slider-thumb {
@@ -100,13 +127,29 @@ button svg{
   width: clamp(3.2rem, 2rem + 6vw, 5.4rem);
 }
 
-.forest:hover svg path, .rain:hover svg path, .coffee:hover svg path, .fireplace:hover svg path{
+#cards button svg path{
+  fill: var(--card-color)
+}
+
+#cards button svg path:hover{
+  fill: var(--card-color-hover);
+}
+
+#cards button svg path + path{
+  fill: var(--card-symbol);
+}
+
+#cards button:hover svg path + path{
+  fill: var(--card-symbol-hover);
+}
+
+/*.forest:hover svg path, .rain:hover svg path, .coffee:hover svg path, .fireplace:hover svg path{
   fill: #02799D;
 }
 
 .forest:hover svg path + path, .rain:hover svg path + path, .coffee:hover svg path + path, .fireplace:hover svg path + path{
   fill:#fff;
-}
+}*/
 
 .hide{
   display: none;
@@ -172,9 +215,14 @@ button svg{
   #cards {
     width: 75vw;
     height: 30vh;
+    margin-top: 30px;
     align-self: center;
     justify-content: center;
 }
+
+  .btn-toggle{
+    top: -60px;
+  }
 }
 
 

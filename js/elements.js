@@ -16,6 +16,11 @@ const volumeFireplace = document.getElementById('fireplace')
 const volumeForest = document.getElementById('nature')
 const volumeRain = document.getElementById('rain')
 
+const btnToggle = document.querySelector('.btn-toggle')
+const btnDark = document.querySelector('.dark-mode-btn')
+const btnLight = document.querySelector('.light-mode-btn')
+const root = document.querySelector(':root')
+
 export{
   minutesDisplay,
   secondsDisplay,
@@ -31,5 +36,9 @@ export{
   volumeCoffee,
   volumeFireplace,
   volumeForest,
-  volumeRain
+  volumeRain,
+  btnToggle,
+  btnDark,
+  btnLight,
+  root
 }
