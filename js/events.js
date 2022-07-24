@@ -26,12 +26,13 @@ export default function({controls, timer, sounds}){
   })
 
   buttonPause.addEventListener('click', function(){
-    controls.pause()
+    controls.reset()
     timer.hold()
     sounds.pressButton()
   })
 
   buttonStop.addEventListener('click', function(){
+    controls.reset()
     timer.reset()
     sounds.pressButton()
   })
